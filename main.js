@@ -1,3 +1,3 @@
-// import Hikes from './modules/hikes.js';
+import Hikes from './modules/hikes.js';
 
 console.log("test");
