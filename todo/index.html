@@ -19,27 +19,31 @@
   </head>
 
   <body>
-    <main>
-      <h1>To Do</h1>
-      <ul id="todo" class="todoStyles"></ul>
-    </main>
-    <footer>
-      <form id='add-task-form'>
-        <input
-            type="text"
-            id="taskName"
-            name="taskName"
-            maxlength="40"
-        >
-        <input id='add-task-button' type="submit" value="Add Task">
-        <input type="hidden" name="action" value="add-task-button">
-      </form>
-      <div id="filters">
-        <button id="filter-all-button">All</button>
-        <button id="filter-incomplete-button">Incomplete</button>
-        <button id="filter-complete-button">Complete</button>
+    <div id="page">
+      <div id="content">
+        <main>
+          <h1>To Do</h1>
+          <ul id="todo" class="todoStyles"></ul>
+        </main>
       </div>
-    </footer>
+      <footer>
+        <form id='add-task-form'>
+          <input
+              type="text"
+              id="taskName"
+              name="taskName"
+              maxlength="40"
+          >
+          <input id='add-task-button' type="submit" value="Add Task">
+          <input type="hidden" name="action" value="add-task-button">
+        </form>
+        <div id="filters">
+          <button id="filter-all-button">All</button>
+          <button id="filter-incomplete-button">Incomplete</button>
+          <button id="filter-complete-button">Complete</button>
+        </div>
+      </footer>
+    </div>
 
     <!-- <script src="main.js" type="module"></script> -->
     <script src="js/main.js"></script>
