@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/base.css">
     <title>Todos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
@@ -19,8 +20,10 @@
 
   <body>
     <main>
-      <h1>Todos</h1>
+      <h1>To Do</h1>
       <ul id="todo" class="todoStyles"></ul>
+    </main>
+    <footer>
       <form id='add-task-form'>
         <input
             type="text"
@@ -31,9 +34,14 @@
         <input id='add-task-button' type="submit" value="Add Task">
         <input type="hidden" name="action" value="add-task-button">
       </form>
-    </main>
+      <div id="filters">
+        <button id="filter-all-button">All</button>
+        <button id="filter-incomplete-button">Incomplete</button>
+        <button id="filter-complete-button">Complete</button>
+      </div>
+    </footer>
 
     <!-- <script src="main.js" type="module"></script> -->
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

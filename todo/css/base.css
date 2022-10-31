@@ -1,0 +1,72 @@
+/*****************************************************************************/
+/* Body                                                                      */
+/*****************************************************************************/
+
+body {
+    background-color: white;
+}
+
+/*****************************************************************************/
+/* Main                                                                      */
+/*****************************************************************************/
+
+main {
+    position: relative;
+    min-height: 100vh;
+}
+
+main h1 {
+    text-align: center;
+}
+
+ /*****************************************************************************/
+ /* ToDo List                                                                 */
+ /*****************************************************************************/
+
+ul {
+    list-style-type: none;
+}
+
+#taskGrid {
+    display: grid;
+    grid-template-columns: 30px 1fr 50px;
+    grid-template-rows: 50px;
+    align-items: center;
+}
+
+li h2 {
+    margin: 10px;
+}
+
+.complete {
+    margin-top: 3px;
+}
+
+.remove {
+    margin-top: 5px;
+    font-size: large;
+    border: none;
+    background-color: white;
+    margin-right: 20px;
+    
+}
+
+/*****************************************************************************/
+/* Footer                                                                    */
+/*****************************************************************************/
+ 
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4.5rem;
+}
+
+footer form {
+    text-align: center;
+}
+
+#filters {
+    margin-top: 10px    ;
+    text-align: center;
+}
