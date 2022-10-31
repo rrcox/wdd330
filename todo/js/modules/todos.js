@@ -48,9 +48,9 @@ export default class Todos {
     }
     
     #highlightFilterButton(filterAllButton,  filterIncompleteButton, filterCompleteButton) {
-        filterAllButton.style.backgroundColor = (this.getFilter() === "all" ? "green" : "white");
-        filterIncompleteButton.style.backgroundColor = (this.getFilter() === "incomplete" ? "green" : "white");
-        filterCompleteButton.style.backgroundColor = (this.getFilter() === "complete" ? "green" : "white");
+        filterAllButton.style.backgroundColor = (this.getFilter() === "all" ? "darkseagreen" : "white");
+        filterIncompleteButton.style.backgroundColor = (this.getFilter() === "incomplete" ? "darkseagreen" : "white");
+        filterCompleteButton.style.backgroundColor = (this.getFilter() === "complete" ? "darkseagreen" : "white");
     }
 
     show() {       
