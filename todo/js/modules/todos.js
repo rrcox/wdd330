@@ -47,10 +47,10 @@ export default class Todos {
         this.show();
     }
     
-    #highlightFilterButton(filter, filterAllButton,  filterIncompleteButton, filterCompleteButton) {
-        filterAllButton.style.backgroundColor = (todos.getFilter() === "all" ? "green" : "white");
-        filterIncompleteButton.style.backgroundColor = (todos.getFilter() === "incomplete" ? "green" : "white");
-        filterCompleteButton.style.backgroundColor = (todos.getFilter() === "complete" ? "green" : "white");
+    #highlightFilterButton(filterAllButton,  filterIncompleteButton, filterCompleteButton) {
+        filterAllButton.style.backgroundColor = (this.getFilter() === "all" ? "green" : "white");
+        filterIncompleteButton.style.backgroundColor = (this.getFilter() === "incomplete" ? "green" : "white");
+        filterCompleteButton.style.backgroundColor = (this.getFilter() === "complete" ? "green" : "white");
     }
 
     show() {       
@@ -98,20 +98,20 @@ export default class Todos {
         const filterIncompleteButton = document.getElementById("filter-incomplete-button");
         const filterCompleteButton = document.getElementById("filter-complete-button");
     
-        this.#highlightFilterButton(this.getFilter(), filterAllButton, filterIncompleteButton, filterCompleteButton);
+        this.#highlightFilterButton(filterAllButton, filterIncompleteButton, filterCompleteButton);
     
         filterAllButton.addEventListener("click", (e) => {
             this.hide();
             this.setFilter("all");
             this.show();
-            this.#highlightFilterButton(this.getFilter(), filterAllButton, filterIncompleteButton, filterCompleteButton);
+            this.#highlightFilterButton(filterAllButton, filterIncompleteButton, filterCompleteButton);
         });
         
         filterIncompleteButton.addEventListener("click", (e) => {
             this.hide();
             this.setFilter("incomplete");
             this.show();
-            this.#highlightFilterButton(this.getFilter(), filterAllButton, filterIncompleteButton, filterCompleteButton);
+            this.#highlightFilterButton(filterAllButton, filterIncompleteButton, filterCompleteButton);
         });
     
         filterCompleteButton.addEventListener("click", (e) => {
