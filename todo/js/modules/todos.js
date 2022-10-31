@@ -118,7 +118,7 @@ export default class Todos {
             this.hide();
             this.setFilter("complete");
             this.show();
-            this.#highlightFilterButton(this.getFilter(), filterAllButton, filterIncompleteButton, filterCompleteButton);
+            this.#highlightFilterButton(filterAllButton, filterIncompleteButton, filterCompleteButton);
         });
     }
 }
