@@ -1,0 +1,17 @@
+#title {
+    font-size: 3rem;
+    margin-left: 20px;
+}
+
+#quakeList {
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#quakeList li {
+    padding: 10px;
+}
+
+#backButton {
+    cursor: pointer;
+}
