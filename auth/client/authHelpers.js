@@ -14,7 +14,7 @@ export async function makeRequest(url, method = 'GET', body = null) {
   if (method == 'POST' || method == 'PUT') {
     options.body = JSON.stringify(body);
   }
-  
+  console.log("baseURL + url=",baseURL + url);
   const response = await fetch(baseURL + url, options);
   // in this case we are processing the response as JSON before we check the status. The API we are using will send back more meaningful error messages than the default messages in the response, but we have to convert it before we can get to them.
   const data = await response.json();

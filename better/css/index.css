@@ -1,4 +1,80 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    min-height: 100vh; 
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #2962FF;
+    color: white;
+    height: 5vh;
+}
+
+main {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    height: 90vh;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2962FF;
+    color: white;
+    height: 5vh;
+}
+
+footer span {
+    cursor: pointer;
+}
+
 #title {
     font-size: 3rem;
     margin-left: 20px;
+    width: 100%;
+    height: 100px;
+}
+
+#dashboard {
+    display: flex;
+    justify-content: center;
+}
+
+#canvas {
+    border: 1px solid black;
+    margin-top: 5px;
+}
+
+#legend {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 5px;
+        width: 100%;
+}
+#targetColor {
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    background-color: blue;
+    margin-right: 10px;
+}
+
+#actualColor {
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    background-color: green;
 }
