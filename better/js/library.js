@@ -22,6 +22,8 @@ export function renderDashboard(initialWidth, width, height) {
                                 height=${graphHeight}
                             >
                             </canvas>
+                            <div>${graphWidth}</div>
+                            <div>${graphHeight}</div>
                          </div>`;
 
     // Get canvas and context
