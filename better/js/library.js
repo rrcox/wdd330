@@ -24,6 +24,8 @@ export function renderDashboard(initialWidth, width, height) {
                             </canvas>
                             <div>${graphWidth}</div>
                             <div>${graphHeight}</div>
+                            <div>${scale}</div>
+                            <div>${maxProportion}</div>
                          </div>`;
 
     // Get canvas and context
@@ -36,13 +38,13 @@ export function renderDashboard(initialWidth, width, height) {
 function barGraph(values, height, width, maxProportion, context, scale = 1) {
 
         // Create target and actual gradients
-        const targetGradient = context.createLinearGradient(20, 400, 20, 800);
-        targetGradient.addColorStop(0, "blue");
-        targetGradient.addColorStop(1, "lightblue");
+        // const targetGradient = context.createLinearGradient(0, 0, width, height);
+        // targetGradient.addColorStop(0, "blue");
+        // targetGradient.addColorStop(1, "lightblue");
 
-        const actualGradient = context.createLinearGradient(20, 400, 20, 800);
-        actualGradient.addColorStop(0, "green");
-        actualGradient.addColorStop(1, "lightgreen");
+        // const actualGradient = context.createLinearGradient(0, 0, width, height);
+        // actualGradient.addColorStop(0, "green");
+        // actualGradient.addColorStop(1, "lightgreen");
 
         // Draw bars
         const topGapPct = 0.9;
@@ -69,12 +71,14 @@ function barGraph(values, height, width, maxProportion, context, scale = 1) {
 
             x = xOffset + (i * barWidth * 2) + (i * barGap);
             y = height - targetHeight;
-            context.fillStyle = targetGradient;
+            // context.fillStyle = targetGradient;
+            context.fillStyle = 'blue';
             context.fillRect(x, y, barWidth, targetHeight);
             
             x = xOffset + barWidth + (i * barWidth * 2) + (i * barGap);
             y = height - actualHeight;
-            context.fillStyle = actualGradient;
+            // context.fillStyle = actualGradient;
+            context.fillStyle = 'green';
             context.fillRect(x, y, barWidth, actualHeight);
         });
 }
