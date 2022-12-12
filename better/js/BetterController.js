@@ -1,6 +1,6 @@
 import BetterModel from './BetterModel.js';
 import BetterView from './BetterView.js';
-import { renderDashboard } from './library.js';
+// import { renderDashboard, renderLegend } from './library.js';
 
 export default class BetterController {
     constructor(title) {
@@ -28,12 +28,13 @@ export default class BetterController {
 
     display() {
         this.#showTitle();
-        renderDashboard(this.width, this.width, this.height);
+        this.betterView.renderDashboard(this.width, this.height);
+        this.betterView.renderLegend();
     }
 
     addResizeListener() {
         window.addEventListener("resize", (event) => {
-            renderDashboard(this.width, window.innerWidth, window.innerHeight);
+            this.betterView.renderDashboard(this.width, window.innerWidth, window.innerHeight);
         });
     }
 }
