@@ -9,13 +9,7 @@ export default class BetterView {
         userElement.innerHTML = `<p>${user.first} ${user.last}, ${user.born}</p>`
     }
 
-    renderDashboard(width, height) {
-        const values = [
-                            {label: 'Goal 2', target: 250, actual: 500 },
-                            {label: 'Goal 1', target: 400, actual: 300 },
-                            {label: 'Goal 3', target:  75, actual: 60 }
-                       ];
-                      
+    renderDashboard(width, height, values) {            
         const element = document.getElementById('dashboard');
         const maxProportion = getMaxProportion(values);
         const graphWidth = width * 0.8;
