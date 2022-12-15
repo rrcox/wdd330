@@ -17,6 +17,12 @@ header {
     background-color: #2962FF;
     color: white;
     height: 5vh;
+    text-align: center;
+}
+
+header div {
+    font-size: 1.5rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 main {
@@ -53,8 +59,8 @@ bar-graph {
 }
 
 #canvas {
-    border: 1px solid black;
-    margin-top: 5px;
+    border: 1px solid darkgray;
+    margin-top: 30px;
 }
 
 #legend {
@@ -81,4 +87,50 @@ bar-graph {
     margin-top: 2px;
     border: 1px solid #81C784;
     background-color: #81C784;
+}
+
+#welcome {
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+}
+
+#logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+#logo {
+    max-width: 350px;
+}
+
+#dashboardTitle {
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+}
+
+#legend {
+    margin-bottom: 150px;
+}
+
+goal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#goalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 150px;
+}
+
+#goalForm input {
+    height: 30px;
 }

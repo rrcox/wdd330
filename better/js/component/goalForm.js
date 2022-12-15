@@ -12,7 +12,6 @@ class GoalForm extends HTMLElement {
     
     displayForm() {
         this.innerHTML = `
-            <h1>Goal</h1>
             <form id="goalForm">
                 <label for="target">Label*:</label>
                 <input
@@ -41,6 +40,7 @@ class GoalForm extends HTMLElement {
                 <input type="submit">
                 <div id="formMessage"></div>
             </form>
+            <h1>Goal</h1>
         `;
         
         const form = document.getElementById('goalForm');
