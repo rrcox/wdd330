@@ -17,9 +17,7 @@ import Model from "./model.js";
 let values = [];
 const model = new Model();
 
-// model.writeValues(values).then( () => {
-//     console.log("values written to db");
-// }); 
+// model.writeValues(values).then( () => {}); 
 
 localStorage.clear();
 model.readValues(values).then( () => {
@@ -41,7 +39,6 @@ function router(details=null) {
     let view = routes[location.pathname];
 
     if(details && !details.type) {
-        console.log("got route:",details)
         view = routes["/goal"];
         history.replaceState(null, "", "/goal");
         document.title = view.title;

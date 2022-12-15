@@ -1,5 +1,3 @@
-// import { connectStorageEmulator } from "@firebase/storage";
-
 export function drawBarGraph(values, height, width, maxProportion, context) {
     const topGapPct = 0.85;
     const barWidth = Math.floor(width / ((values.length * 2) + values.length + 1)); 
@@ -89,8 +87,3 @@ export function cloneObjectArray(original) {
     });
     return clone;
 }
-
-// export function processGoalForm() {
-//     console.log("processing goal form");
-// }
-

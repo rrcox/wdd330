@@ -16,7 +16,7 @@ export default class Model {
     }
 
     async readValues(values) {
-        const snapshot = await getDocs(collection(this.db, "values"))
+        const snapshot = await getDocs(collection(this.db, "values"));
         snapshot.forEach(doc => {
             values.push({
                 label: doc.data().label,
@@ -24,52 +24,44 @@ export default class Model {
                 actual: doc.data().actual,
                 id: doc.id
             }); 
-        })
+        });
     }
 
     async writeValues(values) {
         try {
-            await this.writeValuesToDb(values);
+            for (const value of values) {
+                const docRef = await addDoc(collection(this.db, "values"), {
+                    label: value.label,
+                    target: value.target,
+                    actual: value.actual
+                });    
+            }
         } catch (e) {
             console.error("Error adding records: ", e);
         }
     }
 
-    writeValuesToDb(values) {
-        values.forEach(value => {
-            const docRef = addDoc(collection(this.db, "values"), {
-                label: value.label,
-                target: value.target,
-                actual: value.actual
-            });
-        })
-    }
-    
     async deleteValues(values) {
         if (!values.length) {
-            console.log("empty values array");
-            return false;
+            return;
         }
 
         try {
-            await this.deleteValuesFromDb(values);
+            for (const value of values) {
+                await deleteDoc(doc(this.db, "values", value.id));
+            }
         } catch (e) {
             console.error("Error deleting records: ", e);
         }
-    }
-
-    deleteValuesFromDb(values) {
-        values.forEach(value => {
-            deleteDoc(doc(this.db, "values", value.id));
-        })
     }
 
     updateValues(originalValues, changedValues) {
         this.deleteValues(originalValues).then( () => {
             this.writeValues(changedValues).then( () => {
                 const values = [];
-                this.readValues(values).then()
-                localStorage.setItem("values", JSON.stringify(changedValues));    
+                this.readValues(values).then( () => {
+                    localStorage.setItem("values", JSON.stringify(values));    
+                })
             });
         });
     }
