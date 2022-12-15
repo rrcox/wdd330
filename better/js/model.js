@@ -1,6 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js';
 import { getFirestore, collection, doc, addDoc, getDocs, deleteDoc } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore-lite.js';
-// import { cloneObjectArray } from './library.js';
 
 export default class Model {
     constructor() {
@@ -68,6 +67,8 @@ export default class Model {
     updateValues(originalValues, changedValues) {
         this.deleteValues(originalValues).then( () => {
             this.writeValues(changedValues).then( () => {
+                const values = [];
+                this.readValues(values).then()
                 localStorage.setItem("values", JSON.stringify(changedValues));    
             });
         });
